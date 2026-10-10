@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Workshop Meme</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 25px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #201538, #674188, #ff9a9e);
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 38px;
+            color: #ffe082;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .meme-container {
+            max-width: 900px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .meme {
+            padding: 25px;
+            border-radius: 20px;
+            min-height: 230px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 8px 20px #0003;
+            transition: transform 0.3s;
+        }
+
+        .meme:hover {
+            transform: translateY(-5px);
+        }
+
+        .meme h2 {
+            font-size: 22px;
+        }
+
+        .meme p {
+            font-size: 17px;
+            font-weight: bold;
+            line-height: 1.6;
+        }
+
+        .emoji {
+            font-size: 55px;
+        }
+
+        .morning {
+            background: #ffd6e0;
+            color: #512b58;
+        }
+
+        .learning {
+            background: #cdeffd;
+            color: #243b67;
+        }
+
+        .success {
+            background: #caffbf;
+            color: #24533d;
+        }
+
+        .fun {
+            background: #ffe5b4;
+            color: #663f22;
+        }
+
+        .final {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: white;
+            min-height: 200px;
+        }
+
+        button {
+            margin: 25px 5px 10px;
+            padding: 13px 22px;
+            border: none;
+            border-radius: 25px;
+            background: #ffe082;
+            color: #33234a;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: white;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .meme-container {
+                grid-template-columns: 1fr;
+            }
+
+            .final {
+                grid-column: auto;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 5px;
+            }
+
+            button {
+                display: none;
+            }
+
+            .meme {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🐙 GitHub Workshop 😂</h1>
+    <p class="subtitle">
+        From confusion to coding... and finally full entertainment! 💻💗
+    </p>
+
+    <div class="meme-container">
+
+        <div class="meme morning">
+            <div>
+                <h2>🌅 Morning Me</h2>
+                <p>
+                    "GitHub workshop-ah? 😴<br>
+                    HTML file use panni enna panna porom?"
+                </p>
+            </div>
+            <div class="emoji">🐱💭</div>
+        </div>
+
+        <div class="meme learning">
+            <div>
+                <h2>💻 Workshop Started</h2>
+                <p>
+                    "Repository create pannu...<br>
+                    HTML file upload pannu...<br>
+                    Ada, idhu nalla irukke! 👀"
+                </p>
+            </div>
+            <div class="emoji">🐙⌨️</div>
+        </div>
+
+        <div class="meme success">
+            <div>
+                <h2>🚀 Code Worked!</h2>
+                <p>
+                    "En first HTML file! 😎<br>
+                    Naanum developer aayitten pola!"
+                </p>
+            </div>
+            <div class="emoji">🤓✨</div>
+        </div>
+
+        <div class="meme fun">
+            <div>
+                <h2>🎉 Workshop Vibes</h2>
+                <p>
+                    "Learning konjam...<br>
+                    Sirippu neraiya...<br>
+                    Entertainment vera level! 😂"
+                </p>
+            </div>
+            <div class="emoji">🥳🎶</div>
+        </div>
+
+        <div class="meme final">
+            <h2>💖 Final Review</h2>
+            <p>
+                Started with curiosity...<br>
+                Ended with happiness! 🫶
+            </p>
+            <p>
+                HTML + GitHub + Good Friends<br>
+                = BEST DAY EVER! 🚀
+            </p>
+            <div class="emoji">🐱💗🎊</div>
+        </div>
+
+    </div>
+
+    <button onclick="window.print()">
+        🖨️ Save Meme as PDF
+    </button>
+
+    <button onclick="copyCaption()">
+        📋 Copy Caption
+    </button>
+
+    <footer>
+        Made with 💗 and code | GitHub Workshop Memories ✨
+    </footer>
+
+    <script>
+        function copyCaption() {
+            const caption =
+                "💻 GitHub Workshop = New Skills + Good Vibes + Unlimited Fun! 😂❤️ One workshop, so many memories! 🚀🐙";
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(caption)
+                    .then(() => alert("Caption copied! 💗"))
+                    .catch(() => prompt("Copy this caption:", caption));
+            } else {
+                prompt("Copy this caption:", caption);
+            }
+        }
+    </script>
+
+</body>
+</html>
